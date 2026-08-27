@@ -5,7 +5,7 @@ import time
 print(" ")
 print("Flip a coin to answer your question or dispute!")
 print(" ")
-pick = str(input("Heads or Tails? (h/t) "))
+pick = input("Heads or Tails? (h/t) ")
 num = (1, 2)
 rnd_num = random.choice(num)
 print(" ")
