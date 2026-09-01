@@ -6,13 +6,21 @@ print(" ")
 
 while cont:
     # Användaren förlorar om de har inga poäng kvar
+    InvalidNumber = True
     if point > 0:
-        # Användaren väljer sin gissning och hur mycket de lägger på sin gissning
-        print(" ")
-        choice = input("Datorn står och skakar två tärningar i handen. Tror du den kommer att slå mindre, större, eller exact 6: ")
-        print(" ")
-        amount = int(input(f"Hur mycket vill du lägga (du har {point} just nu): "))
-        print(" ")
+        while InvalidNumber:
+            # Användaren väljer sin gissning och hur mycket de lägger på sin gissning
+            print(" ")
+            choice = input("Datorn står och skakar två tärningar i handen. Tror du den kommer att slå mindre, större, eller exact 6: ")
+            print(" ")
+            amount = int(input(f"Hur mycket vill du lägga (du har {point} just nu): "))
+            if (point - amount) < 0:
+                InvalidNumber = True
+                print(" ")
+                print("Du kan inte välja mer än poängen du har!")
+            else:
+                InvalidNumber = False
+            print(" ")
         point = point - amount
 
         # Datorns slag, sätts slumpat
@@ -32,7 +40,7 @@ while cont:
         elif (choice.lower() == "större") and (rnd_num > 6):
             print("Datorn fick större än 6, du vann!")
             amount = amount*2
-        elif (choice.lower == "exact" or "6" or "exact 6") and (rnd_num == 6):
+        elif (choice.lower() == "exact" or "6" or "exact 6") and (rnd_num == 6):
             print("Den fick exact 6, du vann!")
             amount = amount*4
         else:
