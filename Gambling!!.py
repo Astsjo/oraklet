@@ -63,7 +63,7 @@ while restart:
             print(" ")
             game_over = input("Du har inga poäng kvar! Vill du starta om (y/n): ")
             print(" ")
-            if (game_over.lower() == "y") or (game_over.lower() == "yes") or (game_over.lower() == "n") or (game_over.lower() == "no") or (game_over.lower() == "ja") or (game_over.lower() == "nej"):
+            if (game_over.lower() == "y") or (game_over.lower() == "yes") or (game_over.lower() == "ja") or (game_over.lower() == "j"):
                 restart = True
             else:
                 restart = False
